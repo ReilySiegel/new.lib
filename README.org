@@ -1,0 +1,43 @@
+#+TITLE: com.reilysiegel/new.lib
+
+This is a modified version of seancorfield's `lib` template, with the following
+changes:
+
+- ~README~ is in org-mode format
+- MPL 2.0 is used as the default license instead of EPL 1.0
+- ~CHANGELOG~ is excluded
+- ~doc/intro.md~ is excluded
+
+* Usage
+
+This is a template project for use with
+[deps-new](https://github.com/seancorfield/deps-new). As originally generated,
+it will produce a new library project when run:
+
+#+begin_src bash
+clojure -Sdeps '{:deps {io.github.reilysiegel/new.lib {:git/sha "SHA"}}}' -Tnew
+create :template com.reilysiegel/new.lib :name myusername/mycoollib
+#+end_src
+
+Assuming you have installed `deps-new` as your `new` "tool" via:
+
+#+begin_src bash
+clojure -Ttools install io.github.seancorfield/deps-new '{:git/tag "v0.4.2"}'
+:as new
+#+end_src
+
+Run this template project's tests (by default, this just validates your
+template's `template.edn` file -- that it is valid EDN and it satisfies the
+`deps-new` Spec for template files):
+
+#+begin_src bash
+clojure -T:build test
+#+end_src
+
+* License
+
+Copyright © 2022 Reily Siegel
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v.
+2.0. If a copy of the MPL was not distributed with this file, You can obtain one
+at https://mozilla.org/MPL/2.0/.
